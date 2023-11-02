@@ -16,7 +16,7 @@ with open('dashboard/style.css') as f:
     st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 
 def load_data():
-    return pd.read_csv('day.csv', parse_dates=['dteday'])
+    return pd.read_csv('dashboard/day.csv', parse_dates=['dteday'])
 
 
 def create_rfm_df(df):
@@ -49,7 +49,7 @@ def create_daily_orders_df(df):
 
 
 def load_json():
-    path = '../dashboard/Animation.json'
+    path = 'dashboard/Animation.json'
     with open(path, 'r') as file:
         url = json.load(file)
         return url 
